@@ -1,12 +1,33 @@
+let display = document.getElementById("display");
+
 function adicionar(valor) {
-  document.getElementById("display").value += valor;
+  display.value += valor;
 }
 
 function limpar() {
-  document.getElementById("display").value = "";
+  display.value = "";
+}
+
+function apagar() {
+  display.value = display.value.slice(0, -1);
 }
 
 function calcular() {
-  let resultado = document.getElementById("display").value;
-  document.getElementById("display").value = eval(resultado);
+  try {
+    display.value = Function("return " + display.value)();
+  } catch {
+    display.value = "Erro";
+  }
 }
+
+document.addEventListener("keydown", function(event) {
+  if (!isNaN(event.key) || "+-*/.".includes(event.key)) {
+    adicionar(event.key);
+  } else if (event.key === "Enter") {
+    calcular();
+  } else if (event.key === "Backspace") {
+    apagar();
+  } else if (event.key === "Escape") {
+    limpar();
+  }
+});

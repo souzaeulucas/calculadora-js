@@ -23,16 +23,21 @@ body {
   margin-bottom: 15px;
   font-size: 24px;
   text-align: right;
-  padding: 10px;
   border: none;
   border-radius: 8px;
+  box-sizing: border-box; /* 🔥 ESSA LINHA RESOLVE O ALINHAMENTO */
+  color: #0f172a; /* texto mais escuro */
+  background: #e2e8f0; /* fundo mais claro */
+  font-weight: bold;
+  letter-spacing: 1px;
 }
+
 
 /* Grade dos botões */
 .botoes {
   display: grid;
   grid-template-columns: repeat(4, 70px);
-  gap: 10px;
+  gap: 15px;
 }
 
 /* Botões */
@@ -50,4 +55,21 @@ button {
 /* Efeito ao passar o mouse */
 button:hover {
   background: #475569;
+}
+
+button:nth-child(4n) {
+  background: #2563eb;
+}
+
+button:nth-child(4n):hover {
+  background: #1d4ed8;
+}
+
+button:last-child {
+  grid-column: span 4;
+  background: #22c55e;
+}
+
+button:last-child:hover {
+  background: #16a34a;
 }

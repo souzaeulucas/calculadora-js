@@ -36,6 +36,14 @@ Este projeto foi desenvolvido como prática inicial de:
 
 ---
 
+## 📸 Preview
+
+<p align="left">
+  <img src="https://github.com/souzaeulucas/calculadora-js/blob/main/CALCULADORA.png" width="30%" />
+</p>
+
+---
+
 ## 👨‍💻 Autor
 
 Desenvolvido por Lucas Souza
